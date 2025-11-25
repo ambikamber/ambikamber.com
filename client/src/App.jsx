@@ -30,6 +30,9 @@ import AdminUsers from './pages/admin/Users';
 import AdminSettings from './pages/admin/Settings';
 import AdminCategories from './pages/admin/Categories';
 
+// Mobile Admin
+import { MobileAdminApp } from './pages/mobile-admin';
+
 // Protected Route
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
@@ -52,6 +55,9 @@ function App() {
               }}
             />
             <Routes>
+              {/* Mobile Admin App - Standalone for WebView */}
+              <Route path="/mobile-admin" element={<MobileAdminApp />} />
+
               {/* Admin Routes */}
               <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}>
                 <Route index element={<AdminDashboard />} />
