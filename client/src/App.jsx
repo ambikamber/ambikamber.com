@@ -7,6 +7,7 @@ import { CartProvider } from './context/CartContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
+import ScrollToTopOnNavigate from './components/layout/ScrollToTopOnNavigate';
 
 // Pages
 import Home from './pages/Home';
@@ -38,6 +39,7 @@ function App() {
     <AuthProvider>
       <CartProvider>
         <Router>
+          <ScrollToTopOnNavigate />
           <div className="min-h-screen flex flex-col">
             <Toaster 
               position="top-center"
