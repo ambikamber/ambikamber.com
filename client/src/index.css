@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cream-50 text-wood-900 font-sans;
+  }
+
+  /* Hide scrollbar on mobile devices */
+  @media (max-width: 768px) {
+    * {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    
+    *::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari, Opera */
+    }
+  }
+
+  /* Utility class to hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-wood-700 text-white px-6 py-3 rounded-lg font-medium 
+           hover:bg-wood-800 transition-all duration-300 
+           focus:outline-none focus:ring-2 focus:ring-wood-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-wood-700 text-wood-700 px-6 py-3 rounded-lg font-medium
+           hover:bg-wood-700 hover:text-white transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-wood-500 focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border border-wood-300 text-wood-700 px-4 py-2 rounded-lg
+           hover:border-wood-500 hover:bg-wood-50 transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-wood-200 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-wood-500 focus:border-transparent
+           bg-white placeholder-wood-400;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden
+           hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif font-bold text-wood-900;
+  }
+
+  .section-subtitle {
+    @apply text-wood-600 mt-2 text-lg;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-wood-700 to-wood-500 bg-clip-text text-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-wood-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-wood-500;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
